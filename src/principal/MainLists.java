@@ -4,8 +4,8 @@ import model.Movie;
 import model.Serie;
 import model.Title;
 
-import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class MainLists {
     public static void main(String[] args) {
@@ -34,5 +34,17 @@ public class MainLists {
                 System.out.println("Classification: " + movie.getClassification());
             }
         }
+
+        ArrayList<String> searchArtist = new ArrayList<>();
+        searchArtist.add("Adam Sandler");
+        searchArtist.add("Tyler");
+        searchArtist.add("Samathan");
+        System.out.println(searchArtist);
+
+        Collections.sort(searchArtist);
+
+        System.out.println(searchArtist);
+
+        Collections.sort(list);
     }
 }
