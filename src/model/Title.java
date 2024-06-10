@@ -1,14 +1,17 @@
 package model;
 
-import org.example.pasta.calculation.TimeCalculator;
-
-public class Title extends TimeCalculator {
+public class Title {
     private String name;
     private int yearRelease;
     private boolean includedPlan;
     private double sumRatings;
     private int totalAssessment;
     private int durationMinutes;
+
+    public Title(String name, int yearRelease) {
+        this.name = name;
+        this.yearRelease = yearRelease;
+    }
 
     public String getName() {
         return name;

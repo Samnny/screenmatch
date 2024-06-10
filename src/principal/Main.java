@@ -11,22 +11,21 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        Movie myMovie = new Movie();
-        myMovie.setName("Your Name");
-        myMovie.setYearRelease(2020);
+        Movie myMovie = new Movie("Your Name", 2020);
         myMovie.setDurationMinutes(120);
         myMovie.setIncludedPlan(true);
         myMovie.assess(10);
         myMovie.assess(8);
         myMovie.displaysTechnicalSheet();
 
-        Movie otherMovie = new Movie();
-        otherMovie.setName("Divertidamente 2");
-        otherMovie.setYearRelease(2024);
+        Movie otherMovie = new Movie("Divertidamente 2", 2024);
+        otherMovie.setDurationMinutes(160);
+        otherMovie.setIncludedPlan(true);
+        otherMovie.assess(10);
+        otherMovie.assess(8);
+        otherMovie.displaysTechnicalSheet();
 
-        Serie mySerie = new Serie();
-        mySerie.setName("Teen Wolf");
-        mySerie.setYearRelease(2015);
+        Serie mySerie = new Serie("Teen Wolf", 2015);
         mySerie.setIncludedPlan(true);
         mySerie.setSeasons(6);
         mySerie.setEpisodesSeason(12);
@@ -53,9 +52,9 @@ public class Main {
         listMovies.add(myMovie);
         listMovies.add(otherMovie);
         System.out.println("Tamanho da lista: " + listMovies.size());
-        System.out.println("Primeiro filme: " + listMovies.get(0));
+        System.out.println("Primeiro filme: " + listMovies.getFirst());
         System.out.println(listMovies);
-        System.out.println("toString do filme: "+ listMovies.get(0).toString());
+        System.out.println("toString do filme: "+ listMovies.getFirst().toString());
 
     }
 }
