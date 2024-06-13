@@ -1,8 +1,16 @@
 package model;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Title implements Comparable<Title>{
+
+    @SerializedName("Title")
     private String name;
+
+    @SerializedName("Year")
     private int yearRelease;
+
+
     private boolean includedPlan;
     private double sumRatings;
     private int totalAssessment;
