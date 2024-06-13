@@ -6,6 +6,7 @@ import model.Title;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class MainLists {
     public static void main(String[] args) {
@@ -46,5 +47,10 @@ public class MainLists {
         System.out.println(searchArtist);
 
         Collections.sort(list);
+
+        Collections.sort(list);
+        list.sort(Comparator.comparing(Title::getYearRelease));
+
+        System.out.println(list);
     }
 }
