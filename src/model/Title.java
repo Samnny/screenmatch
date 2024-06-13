@@ -21,6 +21,16 @@ public class Title implements Comparable<Title>{
         this.yearRelease = yearRelease;
     }
 
+    public Title(TitleOmdb titleOmdb) {
+        this.name = titleOmdb.title();
+        this.durationMinutes = Integer.parseInt(titleOmdb.runtime().substring(0,2));
+
+        if (titleOmdb.year().length() > 4) {
+            throw new
+        }
+        this.yearRelease = Integer.parseInt(titleOmdb.year());
+    }
+
     public String getName() {
         return name;
     }
@@ -79,6 +89,18 @@ public class Title implements Comparable<Title>{
 
     double calculateEvaluationAverages () {
         return sumRatings/totalAssessment;
+    }
+
+    @Override
+    public String toString() {
+        return "Title{" +
+                "name='" + name + '\'' +
+                ", yearRelease=" + yearRelease +
+                ", includedPlan=" + includedPlan +
+                ", sumRatings=" + sumRatings +
+                ", totalAssessment=" + totalAssessment +
+                ", durationMinutes=" + durationMinutes +
+                '}';
     }
 
     @Override
