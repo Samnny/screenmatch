@@ -1,6 +1,7 @@
 package model;
 
 import com.google.gson.annotations.SerializedName;
+import exception.YearConversionException;
 
 public class Title implements Comparable<Title>{
 
@@ -23,12 +24,12 @@ public class Title implements Comparable<Title>{
 
     public Title(TitleOmdb titleOmdb) {
         this.name = titleOmdb.title();
-        this.durationMinutes = Integer.parseInt(titleOmdb.runtime().substring(0,2));
 
         if (titleOmdb.year().length() > 4) {
-            throw new
+            throw new YearConversionException("Não consegui converter o ano.");
         }
         this.yearRelease = Integer.parseInt(titleOmdb.year());
+        this.durationMinutes = Integer.parseInt(titleOmdb.runtime().substring(0,2));
     }
 
     public String getName() {
